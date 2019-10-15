@@ -1,0 +1,9 @@
+{
+  "generator-codibly-ts": {
+    "name": "@codibly/api-validation",
+    "description": "",
+    "version": "0.0.0-semantic-release",
+    "repository": "git@github.com:codibly/api-validation.git",
+    "author": "Damian Łabas <damian.labas@codibly.com>"
+  }
+}
