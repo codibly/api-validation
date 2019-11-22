@@ -1,4 +1,4 @@
-import { ErrorDto } from "./ErrorDto";
+import { Error } from "./Error";
 import { getIn } from "./utils/getIn";
 import { setIn } from "./utils/setIn";
 
@@ -17,7 +17,7 @@ export namespace ValidationErrorMapper {
    *
    * @param error
    */
-  export function toFormErrors(error: ErrorDto): FormErrors {
+  export function toFormErrors(error: Error): FormErrors {
     return error.violations.reduce<FormErrors>(
       (formErrors, violation) =>
         // favor the first error (we assume that it's the most important one)
@@ -40,7 +40,7 @@ export namespace ValidationErrorMapper {
 
   /**
    * Let's say we import spreadsheet using "indications" name in the request with invalid data in the A2 cell.
-   * Backend will perform a validation and return ErrorDto. This error will contain list of violations.
+   * Backend will perform a validation and return Error. This error will contain list of violations.
    * The goal of this function is to map violations with path like "indications.A2" to violations with path "indications"
    * and message "Cell A2: {violation.message}".
    *
@@ -50,7 +50,7 @@ export namespace ValidationErrorMapper {
    * @param sheetFields Get of fields that possibly contains sheet violations
    */
   export function toFormErrorsWithSheetCells(
-    error: ErrorDto,
+    error: Error,
     sheetFields: string[]
   ): FormErrors {
     const formErrors = toFormErrors(error);

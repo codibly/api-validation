@@ -1,11 +1,11 @@
+import { Error } from "../src/Error";
 import { ErrorCode } from "../src/ErrorCode";
-import { ErrorDto } from "../src/ErrorDto";
 import { ValidationErrorMapper } from "../src/ValidationErrorMapper";
 
 // tslint:disable:no-duplicate-string
 describe("ValidationErrorMapper", () => {
   it("should map nested errors", () => {
-    const error: ErrorDto = {
+    const error: Error = {
       errorCode: "VALIDATION_FAILED" as ErrorCode.VALIDATION_FAILED,
       message: "Validation failed",
       violations: [
@@ -26,7 +26,7 @@ describe("ValidationErrorMapper", () => {
   });
 
   it("should map nested sheet errors", () => {
-    const error: ErrorDto = {
+    const error: Error = {
       errorCode: "VALIDATION_FAILED" as ErrorCode.VALIDATION_FAILED,
       message: "Validation failed",
       violations: [

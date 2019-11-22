@@ -1,10 +1,10 @@
 import { ErrorCode } from "./ErrorCode";
 
-export interface ErrorDto extends ErrorDto.Response {
-  violations: ErrorDto.Violation[];
+export interface Error extends Error.Response {
+  violations: Error.Violation[];
 }
 
-export namespace ErrorDto {
+export namespace Error {
   export interface Response<TErrorCode extends ErrorCode = ErrorCode> {
     errorCode: TErrorCode;
     message: string;
@@ -26,7 +26,7 @@ export namespace ErrorDto {
   export function isError(
     errorCode: ErrorCode,
     error: Response | undefined
-  ): error is ErrorDto {
+  ): error is Error {
     return !!error && error.errorCode === errorCode;
   }
 }
