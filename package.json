@@ -54,6 +54,7 @@
   "devDependencies": {
     "@commitlint/config-conventional": "^8.0.0",
     "@types/jest": "^24.0.0",
+    "@types/lodash": "^4.14.149",
     "commitlint": "^8.0.0",
     "git-cz": "^3.0.1",
     "husky": "^2.3.0",
@@ -86,5 +87,8 @@
         "prerelease": true
       }
     ]
+  },
+  "dependencies": {
+    "lodash": "^4.17.15"
   }
 }

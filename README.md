@@ -18,7 +18,32 @@ This package is available as an [npm package](https://www.npmjs.com/package/@cod
 npm install --save @codibly/api-validation
 ```
 
+or
+
+```
+yarn add @codibly/api-validation
+```
+
 ## Usage
+
+The main gola of this library is to help is easy way handle api validation.
+####Error Code
+
+- VALIDATION_ERROR - validation form error code
+  ####Check error code
+  To check if error has valid error code we use function `isError`
+
+```
+function isError(ErrorCode, Response | undefined): error is Error {}
+```
+
+####Get form errors
+To get validation form errors we have to functions which reducer array of errors to simple object where key is a filed name and value is a string or object.
+
+```
+- ValidationErrorMapper.toFormError(error: Error): FormError
+- ValidationErrorMapper.toFormErrorsWithSheetCells(error: Error, sheetField: string[]): FormError
+```
 
 ## License
 
